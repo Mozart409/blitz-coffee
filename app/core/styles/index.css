@@ -2,18 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .hero {
-    @apply w-full text-[#333];
-  }
+.hero {
+  width: 100%;
+  color: #333;
 }
 
 .title {
-  @apply m-0 w-full pt-20;
+  margin: 0;
+  width: 100%;
+  padding-top: 80px;
+  line-height: 1.15;
   font-size: 48px;
 }
 
 .title,
 .description {
-  @apply text-center;
+  text-align: center;
+}
+
+.button {
+  @apply text-white bg-primary-600 hover:bg-primary-700 focus:ring-primary-500 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.button,
+.disabled {
+  @apply text-white bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.linkstyle {
+  @apply text-transparent font-bold bg-clip-text bg-gradient-to-r from-amber-400 via-rose-400 to-pink-700;
 }

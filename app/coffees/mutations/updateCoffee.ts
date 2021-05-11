@@ -4,8 +4,9 @@ import * as z from "zod"
 
 const UpdateCoffee = z
   .object({
-    id: z.number(),
-    name: z.string(),
+    id: z.string(),
+    note: z.string(),
+    amout: z.number(),
   })
   .nonstrict()
 

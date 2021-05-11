@@ -23,7 +23,7 @@ export const CoffeesList = () => {
         {coffees.map((coffee) => (
           <li key={coffee.id}>
             <Link href={Routes.ShowCoffeePage({ coffeeId: coffee.id })}>
-              <a>{coffee.name}</a>
+              <a>{coffee.note}</a>
             </Link>
           </li>
         ))}
