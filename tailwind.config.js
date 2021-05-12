@@ -12,16 +12,12 @@ module.exports = {
     extend: {
       colors: {
         primary: colors.emerald,
-        fuchsia: colors.fuchsia,
-        emerald: colors.emerald,
-        rose: colors.rose,
-        pink: colors.pink,
-        amber: colors.amber,
+        rosa: colors.rosa,
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 }

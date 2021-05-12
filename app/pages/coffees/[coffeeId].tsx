@@ -6,7 +6,7 @@ import deleteCoffee from "app/coffees/mutations/deleteCoffee"
 
 export const Coffee = () => {
   const router = useRouter()
-  const coffeeId = useParam("coffeeId", "number")
+  const coffeeId = useParam("coffeeId", "string")
   const [deleteCoffeeMutation] = useMutation(deleteCoffee)
   const [coffee] = useQuery(getCoffee, { id: coffeeId })
 

@@ -4,7 +4,7 @@ import * as z from "zod"
 
 const CreateCoffee = z
   .object({
-    amout: z.number(),
+    amount: z.number(),
     note: z.string(),
   })
   .nonstrict()

@@ -7,7 +7,7 @@ import { CoffeeForm, FORM_ERROR } from "app/coffees/components/CoffeeForm"
 
 export const EditCoffee = () => {
   const router = useRouter()
-  const coffeeId = useParam("coffeeId", "number")
+  const coffeeId = useParam("coffeeId", "string")
   const [coffee, { setQueryData }] = useQuery(getCoffee, { id: coffeeId })
   const [updateCoffeeMutation] = useMutation(updateCoffee)
 

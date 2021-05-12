@@ -32,7 +32,7 @@ export function Form<S extends z.ZodType<any, any>>({
         <div className="mx-auto flex justify-center">
           <Image
             className="mx-auto h-12 w-auto"
-            src="/carty.svg"
+            src="/logo.svg"
             alt="Carty"
             height={48}
             width={48}

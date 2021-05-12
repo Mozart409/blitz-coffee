@@ -31,7 +31,7 @@ const NavBar = () => {
                   <a className="linkstyle">
                     <Image
                       className="block h-8 w-auto border border-white"
-                      src="/carty.svg"
+                      src="/logo.svg"
                       alt="Logo"
                       height={32}
                       width={32}
@@ -140,6 +140,7 @@ const NavBar = () => {
 
                         <div className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                           <button
+                            className="button"
                             onClick={async () => {
                               await logoutMutation()
                             }}
@@ -313,6 +314,7 @@ const NavBar = () => {
                     </Link>
                     <div className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                       <button
+                        className="button"
                         onClick={async () => {
                           await logoutMutation()
                         }}
@@ -344,8 +346,8 @@ const Layout = ({ title, children }: LayoutProps) => {
   return (
     <>
       <Head>
-        <title>{title || "blitz-wplus-space"}</title>
-        <link rel="icon" href="/carty.svg" />
+        <title>{title || "Consumpation.Coffee"}</title>
+        <link rel="icon" href="/logo.svg" />
       </Head>
 
       <Suspense fallback={<nav className="bg-gray-800"></nav>}>
