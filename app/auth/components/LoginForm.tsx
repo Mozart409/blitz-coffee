@@ -13,12 +13,11 @@ export const LoginForm = (props: LoginFormProps) => {
 
   return (
     <div>
-      <h1>Login</h1>
-
       <Form
         submitText="Login"
         schema={Login}
         initialValues={{ email: "", password: "" }}
+        pageTitle="Login"
         onSubmit={async (values) => {
           try {
             await loginMutation(values)
@@ -37,16 +36,20 @@ export const LoginForm = (props: LoginFormProps) => {
       >
         <LabeledTextField type="email" name="email" label="Email" placeholder="Email" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
-        <div>
-          <Link href={Routes.ForgotPasswordPage()}>
-            <a>Forgot your password?</a>
-          </Link>
+        <div className="text-sm ">
+          <div>
+            <Link href={Routes.ForgotPasswordPage()}>
+              <a className="text-sm text-primary-600 underline">Forgot your password?</a>
+            </Link>
+          </div>
+          <div>
+            Or{" "}
+            <Link href={Routes.SignupPage()}>
+              <a className="text-sm text-primary-600 underline">Sign Up</a>
+            </Link>
+          </div>
         </div>
       </Form>
-
-      <div style={{ marginTop: "1rem" }}>
-        Or <Link href={Routes.SignupPage()}>Sign Up</Link>
-      </div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { useMutation } from "blitz"
+import { useMutation, Link } from "blitz"
 import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
 import signup from "app/auth/mutations/signup"
@@ -13,12 +13,11 @@ export const SignupForm = (props: SignupFormProps) => {
 
   return (
     <div>
-      <h1>Create an Account</h1>
-
       <Form
         submitText="Create Account"
         schema={Signup}
         initialValues={{ email: "", password: "" }}
+        pageTitle="Signup"
         onSubmit={async (values) => {
           try {
             await signupMutation(values)
@@ -33,8 +32,11 @@ export const SignupForm = (props: SignupFormProps) => {
           }
         }}
       >
-        <LabeledTextField name="email" label="Email" placeholder="Email" />
+        <LabeledTextField name="email" label="Email" placeholder="Email" type="email" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
+        <Link href="/login">
+          <a className="text-sm text-primary-600 underline">Or login in via your account.</a>
+        </Link>
       </Form>
     </div>
   )

@@ -40,6 +40,7 @@ export function Form<S extends z.ZodType<any, any>>({
         </div>
 
         <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">{pageTitle}</h1>
+
         <FinalForm
           initialValues={initialValues}
           validate={(values) => {

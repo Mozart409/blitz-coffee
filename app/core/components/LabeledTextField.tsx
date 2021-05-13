@@ -1,5 +1,6 @@
 import { forwardRef, PropsWithoutRef } from "react"
 import { useField } from "react-final-form"
+import { ExclamationCircleIcon } from "@heroicons/react/solid"
 
 export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElements["input"]> {
   /** Field name. */
@@ -24,20 +25,34 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
 
     return (
       <div {...outerProps}>
-        <div className="mt-1 relative rounded-md shadow-sm">
-          <label className="block text-sm font-medium text-gray-700">{label}</label>
-          <input
-            className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
-            {...input}
-            disabled={submitting}
-            {...props}
-            ref={ref}
-          />
-        </div>
-
-        {touched && normalizedError && (
-          <div role="alert" className="mt-2 text-sm text-red-600">
-            {normalizedError}
+        {touched && normalizedError ? (
+          <div>
+            <label className="block text-sm font-medium text-red-600">
+              {label} {normalizedError}
+            </label>
+            <div className="relative rounded-md shadow-sm">
+              <input
+                className="shadow-sm focus:ring-red-500 focus:border-red-500 block w-full sm:text-sm border-red-500 rounded-md"
+                {...input}
+                disabled={submitting}
+                {...props}
+                ref={ref}
+              />
+              <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <ExclamationCircleIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="mt-1 relative rounded-md shadow-sm">
+            <label className="block text-sm font-medium text-gray-700">{label}</label>
+            <input
+              className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
+              {...input}
+              disabled={submitting}
+              {...props}
+              ref={ref}
+            />
           </div>
         )}
       </div>
