@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "TokenType" AS ENUM ('RESET_PASSWORD');
+
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
@@ -33,10 +36,22 @@ CREATE TABLE "Token" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "hashedToken" TEXT NOT NULL,
-    "type" TEXT NOT NULL,
+    "type" "TokenType" NOT NULL,
     "expiresAt" TIMESTAMP(3) NOT NULL,
     "sentTo" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
+
+    PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Coffee" (
+    "id" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "userId" TEXT NOT NULL,
+    "note" TEXT NOT NULL,
+    "amount" INTEGER NOT NULL,
 
     PRIMARY KEY ("id")
 );
@@ -55,3 +70,6 @@ ALTER TABLE "Session" ADD FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELE
 
 -- AddForeignKey
 ALTER TABLE "Token" ADD FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Coffee" ADD FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;

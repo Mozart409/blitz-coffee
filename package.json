@@ -4,15 +4,18 @@
   "scripts": {
     "predev": "docker-compose up -d",
     "dev": "blitz dev",
-    "build": "blitz build",
+    "build": "yarn migrate:deploy && blitz build",
     "start": "blitz start",
+    "start:production": "blitz start --production --port $PORT",
     "studio": "blitz prisma studio",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "test": "jest",
     "test:watch": "jest --watch",
     "prepare": "husky install",
     "analyze": "ANALYZE=true yarn build",
-    "tsc": "tsc --pretty"
+    "tsc": "tsc --pretty",
+    "migrate:dev": "blitz prisma migrate dev --preview-feature",
+    "migrate:deploy": "blitz prisma migrate deploy --preview-feature"
   },
   "prisma": {
     "schema": "db/schema.prisma"
