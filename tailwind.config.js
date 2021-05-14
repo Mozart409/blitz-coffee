@@ -1,7 +1,7 @@
 // tailwind.config.js
 const colors = require("tailwindcss/colors")
 module.exports = {
-  mode: "jit",
+  // mode: "jit",
   purge: {
     content: ["./app/**/*.{js,ts,jsx,tsx}"],
     mode: "all",
@@ -19,5 +19,9 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/typography"),
+  ],
 }
