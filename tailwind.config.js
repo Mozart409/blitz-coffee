@@ -1,11 +1,9 @@
 // tailwind.config.js
 const colors = require("tailwindcss/colors")
 module.exports = {
-  // mode: "jit",
+  mode: "jit",
   purge: {
     content: ["./app/**/*.{js,ts,jsx,tsx}"],
-    mode: "all",
-    preserveHtmlElements: false,
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
