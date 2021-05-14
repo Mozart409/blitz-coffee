@@ -28,7 +28,7 @@ export function Form<S extends z.ZodType<any, any>>({
 }: FormProps<S>) {
   return (
     <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md md:w-full md:max-w-xl">
         <div className="mx-auto flex justify-center">
           <Image
             className="mx-auto h-12 w-auto"
