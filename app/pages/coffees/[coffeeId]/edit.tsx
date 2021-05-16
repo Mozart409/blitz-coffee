@@ -19,7 +19,7 @@ export const EditCoffee = () => {
 
       <div>
         <h1>Edit Coffee {coffee.id}</h1>
-        <pre>{JSON.stringify(coffee)}</pre>
+        <pre>{JSON.stringify(coffee, null, 2)}</pre>
 
         <CoffeeForm
           submitText="Update Coffee"

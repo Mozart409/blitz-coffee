@@ -1,7 +1,6 @@
 // tailwind.config.js
 const colors = require("tailwindcss/colors")
 module.exports = {
-  mode: "jit",
   purge: {
     content: ["./app/**/*.{js,ts,jsx,tsx}"],
   },
@@ -10,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         primary: colors.emerald,
+
         rosa: colors.rosa,
       },
     },

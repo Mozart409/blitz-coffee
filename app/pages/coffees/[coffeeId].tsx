@@ -17,25 +17,32 @@ export const Coffee = () => {
       </Head>
 
       <div>
-        <h1>Coffee {coffee.id}</h1>
+        <h2>Coffee {coffee.id}</h2>
         <pre>{JSON.stringify(coffee, null, 2)}</pre>
 
-        <Link href={Routes.EditCoffeePage({ coffeeId: coffee.id })}>
-          <a>Edit</a>
-        </Link>
+        <div className="space-x-2">
+          <button
+            type="button"
+            className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
+            <Link href={Routes.EditCoffeePage({ coffeeId: coffee.id })}>
+              <a> Edit</a>
+            </Link>
+          </button>
 
-        <button
-          type="button"
-          onClick={async () => {
-            if (window.confirm("This will be deleted")) {
-              await deleteCoffeeMutation({ id: coffee.id })
-              router.push(Routes.CoffeesPage())
-            }
-          }}
-          style={{ marginLeft: "0.5rem" }}
-        >
-          Delete
-        </button>
+          <button
+            type="button"
+            onClick={async () => {
+              if (window.confirm("This will be deleted")) {
+                await deleteCoffeeMutation({ id: coffee.id })
+                router.push(Routes.CoffeesPage())
+              }
+            }}
+            className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+          >
+            Delete
+          </button>
+        </div>
       </div>
     </>
   )
@@ -46,7 +53,9 @@ const ShowCoffeePage: BlitzPage = () => {
     <div>
       <p>
         <Link href={Routes.CoffeesPage()}>
-          <a>Coffees</a>
+          <a>
+            <h1>Coffees Overview</h1>
+          </a>
         </Link>
       </p>
 

@@ -4,7 +4,6 @@ import Layout from "app/core/layouts/Layout"
 import getCoffees from "app/coffees/queries/getCoffees"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid"
 
-import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 const ITEMS_PER_PAGE = 100
 
 export const CoffeesList = () => {
@@ -19,7 +18,6 @@ export const CoffeesList = () => {
   const goToPreviousPage = () => router.push({ query: { page: page - 1 } })
   const goToNextPage = () => router.push({ query: { page: page + 1 } })
 
-  const currentUser = useCurrentUser()
   return (
     <div className="mt-4">
       <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
@@ -50,20 +48,6 @@ export const CoffeesList = () => {
                   <a>
                     <div className="border-t border-gray-200 px-2 sm:p-0">
                       <dl className="sm:divide-y sm:divide-gray-200">
-                        <div className="py-4 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                          <dt className="text-sm font-medium text-gray-500">Full name</dt>
-                          <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {currentUser?.name}
-                          </dd>
-                        </div>
-
-                        <div className="py-4 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                          <dt className="text-sm font-medium text-gray-500">Email</dt>
-                          <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {currentUser?.email}
-                          </dd>
-                        </div>
-
                         <div className="py-4 sm:py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                           <dt className="text-sm font-medium text-gray-500">Note</dt>
                           <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">

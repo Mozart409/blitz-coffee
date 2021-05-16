@@ -39,7 +39,7 @@ export function Form<S extends z.ZodType<any, any>>({
           />
         </div>
 
-        <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">{pageTitle}</h1>
+        <h1>{pageTitle}</h1>
 
         <FinalForm
           initialValues={initialValues}
@@ -72,12 +72,6 @@ export function Form<S extends z.ZodType<any, any>>({
                   {submitText}
                 </button>
               )}
-
-              <style global jsx>{`
-                .form > * + * {
-                  margin-top: 1rem;
-                }
-              `}</style>
             </form>
           )}
         />
