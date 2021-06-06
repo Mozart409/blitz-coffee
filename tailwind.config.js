@@ -1,7 +1,6 @@
 // tailwind.config.js
 const colors = require("tailwindcss/colors")
 module.exports = {
-  mode: "jit",
   purge: {
     content: ["./app/**/*.{js,ts,jsx,tsx}"],
   },
@@ -21,5 +20,6 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
   ],
 }
