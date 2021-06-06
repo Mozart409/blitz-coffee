@@ -30,8 +30,8 @@ const NavBar = () => {
                 <Link href="/">
                   <a>
                     <Image
-                      className="block h-8 w-auto border border-white"
-                      src="/logo.svg"
+                      className="block h-12 w-auto rounded"
+                      src="/apple-icon-180.png"
                       alt="Logo"
                       height={32}
                       width={32}
@@ -347,7 +347,6 @@ const Layout = ({ title, children }: LayoutProps) => {
     <>
       <Head>
         <title>{title || "Consumpation.Coffee"}</title>
-        <link rel="icon" href="/logo.svg" />
       </Head>
 
       <Suspense fallback={<nav className="bg-gray-800"></nav>}>

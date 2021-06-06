@@ -1,0 +1,1 @@
+pwa-asset-generator public/logo.svg public -m public/site.webmanifest --padding "calc(50vh - 25%) calc(50vw - 25%)" -b "linear-gradient(65deg, #FFCF00, #FF1654)" -q 100 -i public/asset-generator-changes.html --favicon

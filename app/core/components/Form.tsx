@@ -31,8 +31,8 @@ export function Form<S extends z.ZodType<any, any>>({
       <div className="sm:mx-auto sm:w-full sm:max-w-md md:w-full md:max-w-xl">
         <div className="mx-auto flex justify-center">
           <Image
-            className="mx-auto h-12 w-auto"
-            src="/logo.svg"
+            className="mx-auto h-12 w-auto rounded"
+            src="/apple-icon-180.png"
             alt="Carty"
             height={48}
             width={48}
