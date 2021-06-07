@@ -4,7 +4,7 @@ import Layout from "app/core/layouts/Layout"
 import getCoffees from "app/coffees/queries/getCoffees"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid"
 
-const ITEMS_PER_PAGE = 5
+const ITEMS_PER_PAGE = 25
 
 export const CoffeesList = () => {
   const router = useRouter()

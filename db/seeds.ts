@@ -11,9 +11,9 @@ const seed = async () => {
   for (let i = 0; i < 25; i++) {
     await db.coffee.create({
       data: {
-        note: faker.lorem.sentence(15) + i,
+        note: faker.lorem.sentence(35) + i,
         amount: faker.datatype.number(4) + i,
-        userId: "ckplmqlq70002vl7pnosptesu",
+        userId: "ckpn4g8420006zq7psqvz3jri",
       },
     })
   }
