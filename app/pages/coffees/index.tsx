@@ -21,6 +21,15 @@ export const CoffeesList = () => {
   return (
     <div className="mx-auto max-w-2xl">
       <div>
+        <div className="mt-4">
+          <Link href={Routes.NewCoffeePage()}>
+            <a>
+              <button className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                Create new coffee
+              </button>
+            </a>
+          </Link>
+        </div>
         <div className="flow-root mt-6 ">
           <ul className="-my-5 divide-y divide-gray-200">
             {coffees.map((coffee) => (
