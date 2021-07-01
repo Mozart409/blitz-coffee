@@ -3,14 +3,14 @@ import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
 import signup from "app/auth/mutations/signup"
 import { Signup } from "app/auth/validations"
-
+import { usePlausible } from "next-plausible"
 type SignupFormProps = {
   onSuccess?: () => void
 }
 
 export const SignupForm = (props: SignupFormProps) => {
   const [signupMutation] = useMutation(signup)
-
+  const plausible = usePlausible()
   return (
     <div>
       <Form
@@ -21,12 +21,15 @@ export const SignupForm = (props: SignupFormProps) => {
         onSubmit={async (values) => {
           try {
             await signupMutation(values)
+            plausible("signupSuccess")
             props.onSuccess?.()
           } catch (error) {
             if (error.code === "P2002" && error.meta?.target?.includes("email")) {
               // This error comes from Prisma
+              plausible("signupEmailTaken")
               return { email: "This email is already being used" }
             } else {
+              plausible("signupFormError")
               return { [FORM_ERROR]: error.toString() }
             }
           }

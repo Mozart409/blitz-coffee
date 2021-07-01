@@ -3,14 +3,14 @@ import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
 import login from "app/auth/mutations/login"
 import { Login } from "app/auth/validations"
-
+import { usePlausible } from "next-plausible"
 type LoginFormProps = {
   onSuccess?: () => void
 }
 
 export const LoginForm = (props: LoginFormProps) => {
   const [loginMutation] = useMutation(login)
-
+  const plausible = usePlausible()
   return (
     <div>
       <Form
@@ -21,11 +21,14 @@ export const LoginForm = (props: LoginFormProps) => {
         onSubmit={async (values) => {
           try {
             await loginMutation(values)
+            plausible("loginSuccess")
             props.onSuccess?.()
           } catch (error) {
             if (error instanceof AuthenticationError) {
+              plausible("loginWrongCreds")
               return { [FORM_ERROR]: "Sorry, those credentials are invalid" }
             } else {
+              plausible("loginFormError")
               return {
                 [FORM_ERROR]:
                   "Sorry, we had an unexpected error. Please try again. - " + error.toString(),

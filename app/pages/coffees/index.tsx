@@ -4,9 +4,13 @@ import Layout from "app/core/layouts/Layout"
 import getCoffees from "app/coffees/queries/getCoffees"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid"
 
+import { usePlausible } from "next-plausible"
+
 const ITEMS_PER_PAGE = 25
 
 export const CoffeesList = () => {
+  const plausible = usePlausible()
+
   const router = useRouter()
   const page = Number(router.query.page) || 0
   const [{ coffees, hasMore }] = usePaginatedQuery(getCoffees, {
@@ -24,7 +28,10 @@ export const CoffeesList = () => {
         <div className="mt-4">
           <Link href={Routes.NewCoffeePage()}>
             <a>
-              <button className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+              <button
+                onClick={() => plausible("createNewCoffee")}
+                className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+              >
                 Create new coffee
               </button>
             </a>
