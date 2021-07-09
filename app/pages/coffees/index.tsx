@@ -43,11 +43,12 @@ export const CoffeesList = () => {
               <li key={coffee.id} className="py-5">
                 <div className="relative focus-within:ring-2 focus-within:ring-indigo-500">
                   <h3 className="text-sm font-semibold text-gray-800">
-                    <a href="#" className="hover:underline focus:outline-none">
-                      {/* Extend touch target to entire panel */}
-                      <span className="absolute inset-0" aria-hidden="true" />
-                      Amount {coffee.amount}
-                    </a>
+                    <Link href={Routes.EditCoffeePage({ coffeeId: coffee.id })}>
+                      <a className="hover:underline focus:outline-none">
+                        <span className="absolute inset-0" aria-hidden="true" />
+                        Amount {coffee.amount}
+                      </a>
+                    </Link>
                   </h3>
                   <h4 className="text-xs font-semibold text-gray-700">
                     {new Date(coffee.createdAt).toLocaleString()}
