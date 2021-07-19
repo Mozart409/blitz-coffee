@@ -42,6 +42,7 @@
     "blitz": "0.38.5",
     "faker": "5.5.3",
     "final-form": "4.20.2",
+    "ioredis": "4.27.6",
     "next-plausible": "1.7.0",
     "postcss": "8.3.5",
     "prisma": "~2.26.0",
