@@ -45,7 +45,10 @@ const NavBar = () => {
 
                   {Navlinks.map((item) => (
                     <Link key={item.id} href={item.href}>
-                      <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                      <a
+                        data-cy={item.name}
+                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      >
                         {item.name}
                       </a>
                     </Link>

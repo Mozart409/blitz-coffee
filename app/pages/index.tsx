@@ -1,13 +1,10 @@
 import React, { Suspense } from "react"
-import { Link, BlitzPage, useMutation, Routes, Image, InferGetServerSidePropsType } from "blitz"
+import { Image, InferGetServerSidePropsType } from "blitz"
 import Layout from "app/core/layouts/Layout"
-import { useCurrentUser } from "app/core/hooks/useCurrentUser"
-import logout from "app/auth/mutations/logout"
 import cache from "app/core/utils/cache"
 import { UsersIcon } from "@heroicons/react/solid"
 import getUserCount from "app/query/getUserCount"
 import getCoffeeCount from "app/query/getCoffeeCount"
-import { redis } from "app/core/utils/redis"
 import Fallback from "app/core/components/Fallback"
 
 /*
@@ -24,7 +21,7 @@ const Stats: React.FunctionComponent<IStatsProps> = ({ userCount, coffeeCount })
   return (
     <div>
       <div className="relative bg-white">
-        <div className="h-56 bg-primary-600 sm:h-72 lg:absolute lg:left-0 lg:h-full lg:w-1/2 rounded">
+        <div className="h-56 bg-gray-600 sm:h-72 lg:absolute lg:left-0 lg:h-full lg:w-1/2 rounded">
           <Image
             className="w-full h-full object-cover rounded"
             src="/team.webp"
@@ -49,13 +46,19 @@ const Stats: React.FunctionComponent<IStatsProps> = ({ userCount, coffeeCount })
               <dl className="-mx-8 -mt-8 flex flex-wrap">
                 <div className="flex flex-col px-8 pt-8">
                   <dt className="order-2 text-base font-medium text-gray-500">Users</dt>
-                  <dd className="order-1 text-2xl font-extrabold text-primary-600 sm:text-3xl">
+                  <dd
+                    data-cy="UserCount"
+                    className="order-1 text-2xl font-extrabold text-primary-600 sm:text-3xl"
+                  >
                     {userCount}
                   </dd>
                 </div>
                 <div className="flex flex-col px-8 pt-8">
                   <dt className="order-2 text-base font-medium text-gray-500">Coffees</dt>
-                  <dd className="order-1 text-2xl font-extrabold text-primary-600 sm:text-3xl">
+                  <dd
+                    data-cy="CoffeeCount"
+                    className="order-1 text-2xl font-extrabold text-primary-600 sm:text-3xl"
+                  >
                     {coffeeCount}
                   </dd>
                 </div>
