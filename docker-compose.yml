@@ -1,9 +1,5 @@
 version: "3"
 
-networks:
-  blitz-coffee:
-    driver: bridge
-
 services:
   db:
     image: postgres:latest
@@ -28,3 +24,6 @@ services:
 
 volumes:
   data:
+networks:
+  blitz-coffee:
+    driver: bridge
