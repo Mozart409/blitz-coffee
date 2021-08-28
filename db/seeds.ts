@@ -13,7 +13,7 @@ const seed = async () => {
       data: {
         note: faker.lorem.sentence(35) + i,
         amount: faker.datatype.number(4) + i,
-        userId: "cksafr8nr00067a7pfam3k8c3",
+        userId: "cksw9m9s700046oxtwkv7bamb",
       },
     })
   }
