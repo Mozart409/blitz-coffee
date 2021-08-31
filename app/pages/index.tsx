@@ -138,12 +138,12 @@ function Home({ userCount, coffeeCount }: InferGetServerSidePropsType<typeof get
 }
 
 export const getServerSideProps = async () => {
-  /* const userCountRES = await cache.fetch("user-count", () => getUserCount(), 60 * 10 * 1)
+  const userCountRES = await cache.fetch("user-count", () => getUserCount(), 60 * 10 * 1)
   const userCount = JSON.stringify(userCountRES)
   const coffeeCountRES = await cache.fetch("coffee-count", () => getCoffeeCount(), 60 * 10 * 1)
-  const coffeeCount = JSON.stringify(coffeeCountRES) */
-  const userCount = "0"
-  const coffeeCount = "0"
+  const coffeeCount = JSON.stringify(coffeeCountRES)
+  /* const userCount = "0"
+  const coffeeCount = "0" */
 
   return {
     props: {
