@@ -1,10 +1,11 @@
-import { Suspense } from "react"
+import React, { Suspense } from "react"
 import { Head, Link, usePaginatedQuery, useRouter, BlitzPage, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getCoffees from "app/coffees/queries/getCoffees"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid"
 
 import { usePlausible } from "next-plausible"
+import CoffeeChart from "app/core/components/CoffeeChart"
 
 const ITEMS_PER_PAGE = 25
 
@@ -36,6 +37,9 @@ export const CoffeesList = () => {
               </button>
             </a>
           </Link>
+        </div>
+        <div>
+          <CoffeeChart coffees={coffees} />
         </div>
         <div className="flow-root mt-6 ">
           <ul className="-my-5 divide-y divide-gray-200">
