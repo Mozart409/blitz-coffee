@@ -14,7 +14,6 @@
     "test:watch": "jest --watch",
     "cy:open": "yarn run cypress open",
     "cy:run": "yarn run cypress run",
-    "prepare": "husky install",
     "analyze": "ANALYZE=true yarn build",
     "tsc": "tsc --pretty",
     "migrate:dev": "blitz prisma migrate dev --preview-feature",
