@@ -38,9 +38,7 @@ export const CoffeesList = () => {
             </a>
           </Link>
         </div>
-        <div>
-          <CoffeeChart coffees={coffees} />
-        </div>
+        <div>{coffees && <CoffeeChart coffees={coffees} />}</div>
         <div className="flow-root mt-6 ">
           <ul className="-my-5 divide-y divide-gray-200">
             {coffees.map((coffee) => (

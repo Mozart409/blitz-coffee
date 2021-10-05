@@ -140,7 +140,7 @@ const data = [
 
 const CoffeeChart: React.FunctionComponent<ICoffeeChartProps> = ({ coffees }) => {
   //
-  const [amountPerDay] = useQuery(getAmountPerDay, { createdAt: coffees[0].createdAt })
+  const [amountPerDay] = useQuery(getAmountPerDay, { createdAt: coffees[0]?.createdAt })
 
   return (
     <div>
