@@ -1,5 +1,7 @@
 import * as React from "react"
 import { Chart, LineAdvance } from "bizcharts"
+import getAmountPerDay from "app/coffees/queries/getAmountPerDay"
+import { useQuery } from "blitz"
 
 interface ICoffeeChartProps {
   coffees: Coffee[]
@@ -138,11 +140,13 @@ const data = [
 
 const CoffeeChart: React.FunctionComponent<ICoffeeChartProps> = ({ coffees }) => {
   //
+  const [amountPerDay] = useQuery(getAmountPerDay, { createdAt: coffees[0].createdAt })
 
   return (
     <div>
       <div>
         <h2>Chart</h2>
+        <pre>{JSON.stringify(amountPerDay, null, 4)}</pre>
         <Chart
           scale={{ value: { min: 0 } }}
           padding={[10, 20, 50, 40]}
