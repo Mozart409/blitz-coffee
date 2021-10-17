@@ -51,7 +51,7 @@ CREATE TABLE "Coffee" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "userId" TEXT NOT NULL,
     "note" TEXT NOT NULL,
-    "amount" INTEGER NOT NULL,
+    "amount" DOUBLE PRECISION NOT NULL,
 
     PRIMARY KEY ("id")
 );
