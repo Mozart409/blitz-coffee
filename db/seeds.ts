@@ -8,7 +8,7 @@ import faker from "faker"
  * realistic data.
  */
 const seed = async () => {
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 25; i++) {
     await db.coffee.create({
       data: {
         note: faker.lorem.sentence(35) + i,
