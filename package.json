@@ -1,6 +1,6 @@
 {
   "name": "blitz-coffee",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "scripts": {
     "predev": "docker-compose up -d",
     "dev": "blitz dev",
