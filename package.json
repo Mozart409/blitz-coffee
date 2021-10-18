@@ -43,6 +43,7 @@
     "autoprefixer": "10.3.3",
     "bizcharts": "4.1.11",
     "blitz": "0.39.0",
+    "dayjs": "1.10.7",
     "faker": "5.5.3",
     "final-form": "4.20.2",
     "ioredis": "4.27.9",
