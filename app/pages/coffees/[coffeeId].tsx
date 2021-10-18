@@ -23,7 +23,7 @@ export const Coffee = () => {
         <div className="space-x-2">
           <button
             type="button"
-            className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="inline-flex items-center py-2 px-3 text-sm font-medium leading-4 text-white bg-blue-600 rounded-md border border-transparent shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
           >
             <Link href={Routes.EditCoffeePage({ coffeeId: coffee.id })}>
               <a> Edit</a>
@@ -38,7 +38,7 @@ export const Coffee = () => {
                 router.push(Routes.CoffeesPage())
               }
             }}
-            className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+            className="inline-flex items-center py-2 px-3 text-sm font-medium leading-4 text-white bg-red-600 rounded-md border border-transparent shadow-sm hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:outline-none"
           >
             Delete
           </button>

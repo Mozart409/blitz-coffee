@@ -5,23 +5,23 @@ export { FORM_ERROR } from "app/core/components/Form"
 export function ProfileForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
   return (
     <Form<S> {...props}>
-      <div className="space-y-6 sm:px-6 lg:px-0 lg:col-span-9">
-        <div className="space-y-6 sm:px-6 lg:px-0 lg:col-span-9">
+      <div className="space-y-6 sm:px-6 lg:col-span-9 lg:px-0">
+        <div className="space-y-6 sm:px-6 lg:col-span-9 lg:px-0">
           <div aria-labelledby="profile_details_heading">
             <form>
-              <div className="shadow sm:rounded-md sm:overflow-hidden">
-                <div className="bg-white py-6 px-4 sm:p-6">
+              <div className="shadow sm:overflow-hidden sm:rounded-md">
+                <div className="py-6 px-4 bg-white sm:p-6">
                   <div>
                     <h2
                       id="profile_details_heading"
-                      className="text-lg leading-6 font-medium text-gray-900"
+                      className="text-lg font-medium leading-6 text-gray-900"
                     >
                       Profile details
                     </h2>
                     <p className="mt-1 text-sm text-gray-500">Update your profile information.</p>
                   </div>
 
-                  <div className="mt-6 grid grid-cols-4 gap-6">
+                  <div className="grid grid-cols-4 gap-6 mt-6">
                     <div className="col-span-4 sm:col-span-2">
                       <LabeledTextField
                         autoComplete="cc-given-name"
@@ -30,7 +30,7 @@ export function ProfileForm<S extends z.ZodType<any, any>>(props: FormProps<S>) 
                         label="Full Name"
                         placeholder="Max Mustermann"
                         type="text"
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm"
+                        className="block py-2 px-3 mt-1 w-full rounded-md border border-gray-300 shadow-sm sm:text-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600"
                       />
                     </div>
 
@@ -42,7 +42,7 @@ export function ProfileForm<S extends z.ZodType<any, any>>(props: FormProps<S>) 
                         label="Email address"
                         placeholder="name.surname@email.com"
                         type="email"
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm"
+                        className="block py-2 px-3 mt-1 w-full rounded-md border border-gray-300 shadow-sm sm:text-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600"
                         disabled
                       />
                     </div>
@@ -55,7 +55,7 @@ export function ProfileForm<S extends z.ZodType<any, any>>(props: FormProps<S>) 
                         label="ID"
                         placeholder="1234"
                         type="text"
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm"
+                        className="block py-2 px-3 mt-1 w-full rounded-md border border-gray-300 shadow-sm sm:text-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600"
                         disabled
                       />
                     </div>
@@ -67,7 +67,7 @@ export function ProfileForm<S extends z.ZodType<any, any>>(props: FormProps<S>) 
                         label="Role"
                         placeholder="USER"
                         type="text"
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-600 focus:border-primary-600 sm:text-sm"
+                        className="block py-2 px-3 mt-1 w-full rounded-md border border-gray-300 shadow-sm sm:text-sm focus:outline-none focus:ring-primary-600 focus:border-primary-600"
                         disabled
                       />
                     </div>

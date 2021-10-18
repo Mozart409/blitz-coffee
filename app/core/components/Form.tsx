@@ -29,9 +29,9 @@ export function Form<S extends z.ZodType<any, any>>({
   return (
     <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md md:w-full md:max-w-xl">
-        <div className="mx-auto flex justify-center">
+        <div className="flex justify-center mx-auto">
           <Image
-            className="mx-auto h-12 w-auto rounded"
+            className="mx-auto w-auto h-12 rounded"
             src="/apple-icon-180.png"
             alt="Carty"
             height={48}
@@ -67,7 +67,7 @@ export function Form<S extends z.ZodType<any, any>>({
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full flex justify-center py-2 px-4 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 duration-150"
+                  className="flex justify-center py-2 px-4 w-full text-base font-medium text-white rounded-md border border-transparent duration-150 bg-primary-600 hover:bg-primary-700"
                 >
                   {submitText}
                 </button>

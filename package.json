@@ -9,7 +9,7 @@
     "start:production": "blitz start --production --port $PORT",
     "studio": "blitz prisma studio",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
-    "lint:fix": "eslint --fix --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "lint:fix": "rustywind --write . && eslint --fix --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "test": "yarn jest",
     "test:watch": "jest --watch",
     "cy:open": "yarn run cypress open",
@@ -48,6 +48,7 @@
     "ioredis": "4.27.9",
     "next-plausible": "2.1.1",
     "postcss": "8.3.6",
+    "preview-email": "3.0.5",
     "prisma": "~2.30.2",
     "react": "0.0.0-experimental-6a589ad71",
     "react-avatar": "3.10.0",
@@ -57,8 +58,7 @@
     "tailwindcss": "2.2.9",
     "typescript": "~4.4.2",
     "yarn": "1.22.11",
-    "zod": "^1.11.17",
-    "preview-email": "3.0.5"
+    "zod": "^1.11.17"
   },
   "devDependencies": {
     "@types/faker": "5.5.8",
@@ -71,7 +71,8 @@
     "lint-staged": "11.1.2",
     "prettier": "2.3.2",
     "prettier-plugin-prisma": "2.30.0",
-    "pretty-quick": "3.1.1"
+    "pretty-quick": "3.1.1",
+    "rustywind": "0.12.2"
   },
   "private": true
 }

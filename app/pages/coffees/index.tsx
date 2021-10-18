@@ -31,7 +31,7 @@ export const CoffeesList = () => {
             <a>
               <button
                 onClick={() => plausible("createNewCoffee")}
-                className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+                className="flex justify-center items-center py-2 px-4 w-full text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50"
               >
                 Create new coffee
               </button>
@@ -41,7 +41,7 @@ export const CoffeesList = () => {
         <div>
           <CoffeeChart coffees={coffees} />
         </div>
-        <div className="flow-root mt-6 ">
+        <div className="flow-root mt-6">
           <ul className="-my-5 divide-y divide-gray-200">
             {coffees.map((coffee) => (
               <li key={coffee.id} className="py-5">
@@ -66,30 +66,30 @@ export const CoffeesList = () => {
         {/*  <div className="mt-6">
           <a
             href="#"
-            className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+            className="flex justify-center items-center py-2 px-4 w-full text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50"
           >
             View all
           </a>
         </div> */}
       </div>
-      <span className="relative z-0 inline-flex shadow-sm rounded-md mt-4">
+      <span className="inline-flex relative z-0 mt-4 rounded-md shadow-sm">
         <button
           type="button"
-          className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
+          className="inline-flex relative items-center py-2 px-2 text-sm font-medium text-gray-500 bg-white rounded-l-md border border-gray-300 hover:bg-gray-50 focus:z-10 focus:ring-1 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
           disabled={page === 0}
           onClick={goToPreviousPage}
         >
-          <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
+          <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
           <span>Previous</span>
         </button>
         <button
           type="button"
-          className="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
+          className="inline-flex relative items-center py-2 px-2 -ml-px text-sm font-medium text-gray-500 bg-white rounded-r-md border border-gray-300 hover:bg-gray-50 focus:z-10 focus:ring-1 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
           disabled={!hasMore}
           onClick={goToNextPage}
         >
           <span>Next</span>
-          <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
+          <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
         </button>
       </span>
     </div>

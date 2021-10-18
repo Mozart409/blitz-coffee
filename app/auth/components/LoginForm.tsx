@@ -39,16 +39,16 @@ export const LoginForm = (props: LoginFormProps) => {
       >
         <LabeledTextField type="email" name="email" label="Email" placeholder="Email" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
-        <div className="text-sm ">
+        <div className="text-sm">
           <div>
             <Link href={Routes.ForgotPasswordPage()}>
-              <a className="text-sm text-primary-600 underline">Forgot your password?</a>
+              <a className="text-sm underline text-primary-600">Forgot your password?</a>
             </Link>
           </div>
           <div>
             Or{" "}
             <Link href={Routes.SignupPage()}>
-              <a className="text-sm text-primary-600 underline">Sign Up</a>
+              <a className="text-sm underline text-primary-600">Sign Up</a>
             </Link>
           </div>
         </div>

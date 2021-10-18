@@ -39,7 +39,7 @@ export const SignupForm = (props: SignupFormProps) => {
         <LabeledTextField name="email" label="Email" placeholder="Email" type="email" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
         <Link href="/login">
-          <a className="text-sm text-primary-600 underline">Or login in via your account.</a>
+          <a className="text-sm underline text-primary-600">Or login in via your account.</a>
         </Link>
       </Form>
     </div>

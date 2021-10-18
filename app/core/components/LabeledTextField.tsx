@@ -32,22 +32,22 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
             </label>
             <div className="relative rounded-md shadow-sm">
               <input
-                className="shadow-sm focus:ring-red-500 focus:border-red-500 block w-full sm:text-sm border-red-500 rounded-md"
+                className="block w-full rounded-md border-red-500 shadow-sm sm:text-sm focus:border-red-500 focus:ring-red-500"
                 {...input}
                 disabled={submitting}
                 {...props}
                 ref={ref}
               />
-              <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                <ExclamationCircleIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
+              <div className="flex absolute inset-y-0 right-0 items-center pr-3 pointer-events-none">
+                <ExclamationCircleIcon className="w-5 h-5 text-red-500" aria-hidden="true" />
               </div>
             </div>
           </div>
         ) : (
-          <div className="mt-1 relative rounded-md shadow-sm">
+          <div className="relative mt-1 rounded-md shadow-sm">
             <label className="block text-sm font-medium text-gray-700">{label}</label>
             <input
-              className="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"
+              className="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm focus:ring-primary-500 focus:border-primary-500"
               {...input}
               disabled={submitting}
               {...props}
