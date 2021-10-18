@@ -2,15 +2,22 @@ import React, { Suspense } from "react"
 import { Image, InferGetServerSidePropsType } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import cache from "app/core/utils/cache"
-import { UsersIcon } from "@heroicons/react/solid"
 import getUserCount from "app/query/getUserCount"
 import getCoffeeCount from "app/query/getCoffeeCount"
 import Fallback from "app/core/components/Fallback"
+import {
+  AcademicCapIcon,
+  BadgeCheckIcon,
+  CashIcon,
+  ClockIcon,
+  ReceiptRefundIcon,
+  UsersIcon,
+  CubeIcon,
+} from "@heroicons/react/outline"
 
-/*
- * This file is just for a pleasant getting started page for your new app.
- * You can delete everything in here and start from scratch if you like.
- */
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ")
+}
 
 interface IStatsProps {
   userCount: string
@@ -18,61 +25,74 @@ interface IStatsProps {
 }
 
 const Stats: React.FunctionComponent<IStatsProps> = ({ userCount, coffeeCount }) => {
+  const cards = [
+    {
+      title: "User Count",
+      description: userCount,
+
+      icon: UsersIcon,
+      iconForeground: "text-teal-700",
+      iconBackground: "bg-teal-50",
+    },
+    {
+      title: "Coffee Count",
+      description: coffeeCount,
+
+      icon: CubeIcon,
+      iconForeground: "text-purple-700",
+      iconBackground: "bg-purple-50",
+    },
+  ]
   return (
     <div>
-      <div className="relative bg-white">
-        <div className="h-56 bg-gray-600 sm:h-72 lg:absolute lg:left-0 lg:h-full lg:w-1/2 rounded">
-          <Image
-            className="w-full h-full object-cover rounded"
-            src="/team.webp"
-            alt="Support team"
-            layout="fill"
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 py-8 sm:py-12 sm:px-6 lg:py-16">
-          <div className="max-w-2xl mx-auto lg:max-w-none lg:mr-0 lg:ml-auto lg:w-1/2 lg:pl-10">
+      <div className="overflow-hidden my-24 bg-gray-200 rounded-lg divide-y divide-gray-200 shadow sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0">
+        {cards.map((card, cardIdx) => (
+          <div
+            key={card.title}
+            className={classNames(
+              cardIdx === 0 ? "rounded-tl-lg rounded-tr-lg sm:rounded-tr-none" : "",
+              cardIdx === 1 ? "sm:rounded-tr-lg" : "",
+              cardIdx === cards.length - 2 ? "sm:rounded-bl-lg" : "",
+              cardIdx === cards.length - 1 ? "rounded-bl-lg rounded-br-lg sm:rounded-bl-none" : "",
+              "relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
+            )}
+          >
             <div>
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
-                <UsersIcon className="h-6 w-6" aria-hidden="true" />
-              </div>
+              <span
+                className={classNames(
+                  card.iconBackground,
+                  card.iconForeground,
+                  "rounded-lg inline-flex p-3 ring-4 ring-white"
+                )}
+              >
+                <card.icon className="w-6 h-6" aria-hidden="true" />
+              </span>
             </div>
-            <h2 className="mt-6 text-3xl font-extrabold text-gray-900 sm:text-4xl">Stats</h2>
-            <p className="mt-6 text-lg text-gray-500">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore nihil ea rerum ipsa.
-              Nostrum consectetur sequi culpa doloribus omnis, molestiae esse placeat,
-              exercitationem magnam quod molestias quia aspernatur deserunt voluptatibus.
-            </p>
-            <div className="mt-8 overflow-hidden">
-              <dl className="-mx-8 -mt-8 flex flex-wrap">
-                <div className="flex flex-col px-8 pt-8">
-                  <dt className="order-2 text-base font-medium text-gray-500">Users</dt>
-                  <dd
-                    data-cy="UserCount"
-                    className="order-1 text-2xl font-extrabold text-primary-600 sm:text-3xl"
-                  >
-                    {userCount}
-                  </dd>
-                </div>
-                <div className="flex flex-col px-8 pt-8">
-                  <dt className="order-2 text-base font-medium text-gray-500">Coffees</dt>
-                  <dd
-                    data-cy="CoffeeCount"
-                    className="order-1 text-2xl font-extrabold text-primary-600 sm:text-3xl"
-                  >
-                    {coffeeCount}
-                  </dd>
-                </div>
-                {/*
-                <div className="flex flex-col px-8 pt-8">
-                  <dt className="order-2 text-base font-medium text-gray-500">Cards</dt>
-                  <dd className="order-1 text-2xl font-extrabold text-primary-600 sm:text-3xl">
-                    {cardCount}
-                  </dd>
-                </div> */}
-              </dl>
+            <div className="mt-8">
+              <h3 className="text-lg font-medium">
+                <p className="focus:outline-none">
+                  {/* Extend touch target to entire panel */}
+                  <span className="absolute inset-0" aria-hidden="true" />
+                  {card.title}
+                </p>
+              </h3>
+              <p className="mt-2 text-sm text-gray-500">{card.description}</p>
             </div>
+            <span
+              className="absolute top-6 right-6 text-gray-300 pointer-events-none group-hover:text-gray-400"
+              aria-hidden="true"
+            >
+              <svg
+                className="w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
+              </svg>
+            </span>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   )

@@ -9,7 +9,9 @@ module.exports = {
     extend: {
       colors: {
         primary: colors.emerald,
-        rosa: colors.rosa,
+        sky: colors.sky,
+        teal: colors.teal,
+        rose: colors.rose,
       },
     },
   },
