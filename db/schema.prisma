@@ -69,3 +69,9 @@ model Coffee {
   note      String
   amount    Int
 }
+
+model AmountPerDay {
+  id     String   @id @default(cuid())
+  date   DateTime @default(now())
+  amount Int
+}

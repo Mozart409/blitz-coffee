@@ -1,6 +1,8 @@
 import * as React from "react"
 import {} from "dayjs"
 import { Chart, LineAdvance } from "bizcharts"
+import { useQuery } from "blitz"
+import getAmountPerDay from "app/coffees/queries/getAmountPerDay"
 
 interface ICoffeeChartProps {
   coffees: Coffees[]
@@ -10,13 +12,14 @@ interface Coffees {
   id: string
   createdAt: Date
   updatedAt: Date
-  userID: string
+  userID?: string
   note: string
   amount: number
 }
 
 const CoffeeChart: React.FunctionComponent<ICoffeeChartProps> = ({ coffees }) => {
   //
+  const [amountPerDay] = useQuery(getAmountPerDay, { createdAt: coffees[0]?.createdAt })
 
   let groupedByDate: any[] = []
 
@@ -26,8 +29,9 @@ const CoffeeChart: React.FunctionComponent<ICoffeeChartProps> = ({ coffees }) =>
   })
   return (
     <div>
-      <pre>{JSON.stringify(groupedByDate, null, 2)}</pre>
-      <pre>{JSON.stringify(coffees, null, 2)}</pre>
+      <pre>{JSON.stringify(amountPerDay, null, 2)}</pre>
+      {/*   <pre>{JSON.stringify(groupedByDate, null, 2)}</pre>
+      <pre>{JSON.stringify(coffees, null, 2)}</pre> */}
       <div>
         <h2>Chart</h2>
         <Chart
