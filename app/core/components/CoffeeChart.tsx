@@ -41,7 +41,7 @@ const CoffeeChart: React.FunctionComponent<ICoffeeChartProps> = ({ coffees }) =>
           height={300}
           data={coffees}
         >
-          <LineAdvance shape="smooth" point area position="createdAt*amount" />
+          {/*   <LineAdvance shape="smooth" point area position="createdAt*amount" /> */}
         </Chart>
       </div>
     </div>
