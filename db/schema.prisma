@@ -67,11 +67,11 @@ model Coffee {
   user      User     @relation(fields: [userId], references: [id])
   userId    String
   note      String
-  amount    Int
+  amount    Decimal
 }
 
 model AmountPerDay {
   id     String   @id @default(cuid())
   date   DateTime @default(now())
-  amount Int
+  amount Decimal
 }
