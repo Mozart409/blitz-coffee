@@ -148,7 +148,7 @@ function Home({ userCount, coffeeCount }: InferGetServerSidePropsType<typeof get
     <div className="container">
       <main>
         <div className="buttons" style={{ marginTop: "1rem", marginBottom: "1rem" }}>
-          <Suspense fallback={<Fallback />}>
+          <Suspense fallback={<div>Loading...</div>}>
             <Stats userCount={userCount} coffeeCount={coffeeCount} />
           </Suspense>
         </div>
