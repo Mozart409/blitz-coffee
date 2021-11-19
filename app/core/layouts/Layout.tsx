@@ -1,13 +1,13 @@
-import { ReactNode, Suspense } from "react"
-import { Head, dynamic } from "blitz"
+import { ReactNode, Suspense } from "react";
+import { Head, dynamic } from "blitz";
 
 type LayoutProps = {
-  title?: string
-  children: ReactNode
-}
+  title?: string;
+  children: ReactNode;
+};
 
-const DynamicNavBar = dynamic(() => import("../components/NavBar"))
-const DynamicFooter = dynamic(() => import("../components/Footer"))
+const DynamicNavBar = dynamic(() => import("../components/NavBar"));
+const DynamicFooter = dynamic(() => import("../components/Footer"));
 
 const Layout = ({ title, children }: LayoutProps) => {
   return (
@@ -16,17 +16,15 @@ const Layout = ({ title, children }: LayoutProps) => {
         <title>{title || "Consumpation.Coffee"}</title>
       </Head>
 
+      <DynamicNavBar />
       <Suspense fallback={<div>Loading...</div>}>
-        <DynamicNavBar />
-
         <main className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">{children}</div>
         </main>
-
-        <DynamicFooter />
       </Suspense>
+      <DynamicFooter />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
