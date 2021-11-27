@@ -5,4 +5,3 @@ This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
 # **blitz-coffee**
 
 ## Getting Started
-
