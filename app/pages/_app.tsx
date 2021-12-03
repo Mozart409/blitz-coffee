@@ -1,4 +1,5 @@
 import {
+  useSession,
   AppProps,
   ErrorComponent,
   useRouter,
@@ -14,9 +15,23 @@ import PlausibleProvider from "next-plausible"
 import "app/core/styles/index.css"
 import { Suspense } from "react"
 
+import * as LogRocket from "integrations/logrocket"
+import React from "react"
+LogRocket.init()
+
 export default function App({ Component, pageProps }: AppProps) {
+  const session = useSession({
+    suspense: false,
+  })
+
   const getLayout = Component.getLayout || ((page) => page)
   const router = useRouter()
+
+  React.useEffect(() => {
+    if (session.userId) {
+      LogRocket.identify(session.userId.toString())
+    }
+  }, [session])
 
   return (
     <PlausibleProvider domain="consumption.coffee">
