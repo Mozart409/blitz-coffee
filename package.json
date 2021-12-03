@@ -1,6 +1,6 @@
 {
   "name": "blitz-coffee",
-  "version": "0.1.5",
+  "version": "0.1.9",
   "scripts": {
     "predev": "docker-compose up -d",
     "dev": "blitz dev",
@@ -51,6 +51,7 @@
     "ioredis": "4.28.2",
     "logrocket": "2.x",
     "logrocket-react": "4.x",
+    "next-compose-plugins": "2.2.1",
     "next-plausible": "3.1.4",
     "postcss": "8.4.4",
     "preview-email": "3.0.5",
