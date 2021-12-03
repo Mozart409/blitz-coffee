@@ -19,7 +19,7 @@ const LinkWrapper = ({ href, children }: Props) => {
       {/* <a href={href as unknown as String}>{children}</a> */}
       <a href="/">Home</a>
       {timer.map((item) => (
-        <p>{item}</p>
+        <p key={item}>{item}</p>
       ))}
       <button onClick={() => removeItem()}>Remove Item</button>
     </div>
