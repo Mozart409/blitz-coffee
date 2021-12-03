@@ -37,6 +37,7 @@
     "@mozart409/footer": "1.0.6",
     "@next/bundle-analyzer": "12.0.4",
     "@prisma/client": "~3.6.0",
+    "@relative-ci/agent": "3.0.0",
     "@tailwindcss/aspect-ratio": "0.3.0",
     "@tailwindcss/forms": "0.3.4",
     "@tailwindcss/line-clamp": "0.2.2",
@@ -48,6 +49,8 @@
     "faker": "5.5.3",
     "final-form": "4.20.4",
     "ioredis": "4.28.2",
+    "logrocket": "2.x",
+    "logrocket-react": "4.x",
     "next-plausible": "3.1.4",
     "postcss": "8.4.4",
     "preview-email": "3.0.5",
@@ -76,7 +79,8 @@
     "prettier": "2.5.0",
     "prettier-plugin-prisma": "3.6.0",
     "pretty-quick": "3.1.2",
-    "rustywind": "0.12.2"
+    "rustywind": "0.12.2",
+    "webpack-stats-plugin": "1.0.3"
   },
   "private": true
 }
