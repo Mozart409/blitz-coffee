@@ -12,6 +12,7 @@ import LoginForm from "app/auth/components/LoginForm"
 import PlausibleProvider from "next-plausible"
 
 import "app/core/styles/index.css"
+import { Suspense } from "react"
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
@@ -19,13 +20,15 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <PlausibleProvider domain="consumption.coffee">
-      <ErrorBoundary
-        FallbackComponent={RootErrorFallback}
-        resetKeys={[router.asPath]}
-        onReset={useQueryErrorResetBoundary().reset}
-      >
-        {getLayout(<Component {...pageProps} />)}
-      </ErrorBoundary>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ErrorBoundary
+          FallbackComponent={RootErrorFallback}
+          resetKeys={[router.asPath]}
+          onReset={useQueryErrorResetBoundary().reset}
+        >
+          {getLayout(<Component {...pageProps} />)}
+        </ErrorBoundary>
+      </Suspense>
     </PlausibleProvider>
   )
 }
