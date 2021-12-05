@@ -20,6 +20,11 @@ module.exports = withPlugins([
           stats: {excludeAssets: [/stats.json/]}
         }));
       }
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        "react-dom$": "react-dom/profiling",
+        "scheduler/tracing": "scheduler/tracing-profiling"
+      };
       config.plugins.push(new StatsWriterPlugin({
         filename: "stats.json",
         stats: {
