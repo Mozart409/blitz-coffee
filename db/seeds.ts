@@ -1,5 +1,6 @@
 import db from "./index"
 import faker from "faker"
+import { SecurePassword } from "blitz"
 /*
  * This seed function is executed when you run `blitz db seed`.
  *
@@ -8,12 +9,24 @@ import faker from "faker"
  * realistic data.
  */
 const seed = async () => {
+  const pw = "test"
+  const hashedPassword = await SecurePassword.hash(pw.trim())
+  await db.user.create({
+    data: {
+      id: "1",
+      email: "test@test.com",
+      hashedPassword,
+      role: "USER",
+    },
+  })
+
   for (let i = 0; i < 25; i++) {
     await db.coffee.create({
       data: {
         note: faker.lorem.sentence(35) + i,
         amount: faker.datatype.number(4) + i,
-        userId: "ckszsk5wx0006rv7pox7adp39",
+        userId: "1",
+        createdAt: faker.date.recent(),
       },
     })
   }
