@@ -4,6 +4,7 @@ import logout from "app/auth/mutations/logout"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import { Transition } from "@headlessui/react"
 import Avatar from "react-avatar"
+import ThemeToggle from "./ThemeToggle"
 
 const NavBar = () => {
   const currentUser = useCurrentUser()
@@ -53,6 +54,7 @@ const NavBar = () => {
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex items-center">
+                <ThemeToggle />
                 <button className="p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-none">
                   <span className="sr-only">View notifications</span>
                   {/* <!-- Heroicon name: outline/bell --> */}
