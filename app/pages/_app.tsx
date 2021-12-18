@@ -34,17 +34,19 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [session])
 
   return (
-    <PlausibleProvider domain="consumption.coffee">
-      <Suspense fallback={<div>Loading...</div>}>
-        <ErrorBoundary
-          FallbackComponent={RootErrorFallback}
-          resetKeys={[router.asPath]}
-          onReset={useQueryErrorResetBoundary().reset}
-        >
-          {getLayout(<Component {...pageProps} />)}
-        </ErrorBoundary>
-      </Suspense>
-    </PlausibleProvider>
+    <div className="min-h-full">
+      <PlausibleProvider domain="consumption.coffee">
+        <Suspense fallback={<div>Loading...</div>}>
+          <ErrorBoundary
+            FallbackComponent={RootErrorFallback}
+            resetKeys={[router.asPath]}
+            onReset={useQueryErrorResetBoundary().reset}
+          >
+            {getLayout(<Component {...pageProps} />)}
+          </ErrorBoundary>
+        </Suspense>
+      </PlausibleProvider>
+    </div>
   )
 }
 

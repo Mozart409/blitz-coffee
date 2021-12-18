@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="bg-white">
+  <footer className="bg-white dark:bg-gray-900">
     <div className="py-12 px-4 mx-auto max-w-7xl sm:px-6 md:flex md:justify-between md:items-center lg:px-8">
       <div className="flex justify-center space-x-6 md:order-2">
         <a
