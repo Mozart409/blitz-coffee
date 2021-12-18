@@ -3,6 +3,7 @@ import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Rout
 import Layout from "app/core/layouts/Layout"
 import getCoffee from "app/coffees/queries/getCoffee"
 import deleteCoffee from "app/coffees/mutations/deleteCoffee"
+import Heading from "app/core/components/Heading"
 
 export const Coffee = () => {
   const router = useRouter()
@@ -54,7 +55,7 @@ const ShowCoffeePage: BlitzPage = () => {
       <p>
         <Link href={Routes.CoffeesPage()}>
           <a>
-            <h1>Coffees Overview</h1>
+            <Heading type={"h1"}>Coffees Overview</Heading>
           </a>
         </Link>
       </p>

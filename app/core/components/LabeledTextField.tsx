@@ -45,7 +45,9 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
           </div>
         ) : (
           <div className="relative mt-1 rounded-md shadow-sm">
-            <label className="block text-sm font-medium text-gray-700">{label}</label>
+            <label className="block text-sm font-medium dark:text-gray-300 text-gray-700">
+              {label}
+            </label>
             <input
               className="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm focus:ring-primary-500 focus:border-primary-500"
               {...input}

@@ -4,6 +4,7 @@ import Layout from "app/core/layouts/Layout"
 import getCoffee from "app/coffees/queries/getCoffee"
 import updateCoffee from "app/coffees/mutations/updateCoffee"
 import { CoffeeForm, FORM_ERROR } from "app/coffees/components/CoffeeForm"
+import Heading from "app/core/components/Heading"
 
 export const EditCoffee = () => {
   const router = useRouter()
@@ -18,7 +19,9 @@ export const EditCoffee = () => {
       </Head>
 
       <div>
-        <h1>Edit Coffee {coffee.id}</h1>
+        <Heading type="h1">
+          <span>Edit Coffee {coffee.id}</span>
+        </Heading>
         <pre>{JSON.stringify(coffee, null, 2)}</pre>
 
         <CoffeeForm
