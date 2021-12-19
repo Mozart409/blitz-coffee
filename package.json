@@ -17,7 +17,8 @@
     "analyze": "ANALYZE=true yarn build",
     "tsc": "tsc --pretty",
     "migrate:dev": "blitz prisma migrate dev --preview-feature",
-    "migrate:deploy": "blitz prisma migrate deploy --preview-feature"
+    "migrate:deploy": "blitz prisma migrate deploy --preview-feature",
+    "prepare": "husky install"
   },
   "prisma": {
     "schema": "db/schema.prisma"
@@ -74,7 +75,7 @@
     "@types/react": "17.0.37",
     "cypress": "9.1.1",
     "eslint": "8.3.0",
-    "husky": "7.0.4",
+    "husky": "^7.0.0",
     "lint-staged": "12.1.2",
     "prettier": "2.5.1",
     "prettier-plugin-prisma": "3.6.0",
