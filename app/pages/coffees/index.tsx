@@ -31,7 +31,7 @@ export const CoffeesList = () => {
             <a>
               <button
                 onClick={() => plausible("createNewCoffee")}
-                className="flex justify-center items-center py-2 px-4 w-full text-sm font-medium text-gray-700 dark:text-gray-300 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-800"
+                className="flex justify-center items-center py-2 px-4 w-full text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800"
               >
                 Create new coffee
               </button>
