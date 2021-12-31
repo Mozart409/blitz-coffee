@@ -17,6 +17,7 @@ import { Suspense } from "react"
 
 import * as LogRocket from "integrations/logrocket"
 import React from "react"
+
 LogRocket.init()
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -42,7 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
             resetKeys={[router.asPath]}
             onReset={useQueryErrorResetBoundary().reset}
           >
-            {getLayout(<Component {...pageProps} />)}
+            <div>{getLayout(<Component {...pageProps} />)}</div>
           </ErrorBoundary>
         </Suspense>
       </PlausibleProvider>
