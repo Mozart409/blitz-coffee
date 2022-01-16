@@ -2,6 +2,7 @@ import { ReactNode, PropsWithoutRef } from "react"
 import { Form as FinalForm, FormProps as FinalFormProps } from "react-final-form"
 import * as z from "zod"
 import { Image } from "blitz"
+import Heading from "./Heading"
 export { FORM_ERROR } from "final-form"
 
 export interface FormProps<S extends z.ZodType<any, any>>
@@ -39,7 +40,7 @@ export function Form<S extends z.ZodType<any, any>>({
           />
         </div>
 
-        <h1>{pageTitle}</h1>
+        <Heading type={"h1"}>{pageTitle}</Heading>
 
         <FinalForm
           initialValues={initialValues}

@@ -4,6 +4,7 @@ import logout from "app/auth/mutations/logout"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import { Transition } from "@headlessui/react"
 import Avatar from "react-avatar"
+import ThemeToggle from "./ThemeToggle"
 
 const NavBar = () => {
   const currentUser = useCurrentUser()
@@ -53,9 +54,10 @@ const NavBar = () => {
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex items-center">
-                <button className="p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-none">
+                <ThemeToggle />
+                {/* <button className="p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-none">
                   <span className="sr-only">View notifications</span>
-                  {/* <!-- Heroicon name: outline/bell --> */}
+
                   <svg
                     className="w-6 h-6"
                     xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +73,7 @@ const NavBar = () => {
                       d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
                     />
                   </svg>
-                </button>
+                </button> */}
 
                 {/* <!-- Profile dropdown --> */}
                 <div className="relative ml-3">

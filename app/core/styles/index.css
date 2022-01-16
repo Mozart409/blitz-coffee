@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  @apply h-full;
+}
+
 .hero {
   width: 100%;
   color: #333;
@@ -36,12 +41,4 @@
 .button,
 .small {
   @apply text-white bg-primary-600 hover:bg-primary-700 focus:ring-primary-500 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2;
-}
-
-h1 {
-  @apply mt-6 text-center text-3xl font-extrabold text-gray-900;
-}
-
-h2 {
-  @apply mt-3 text-left text-xl font-bold text-gray-800;
 }

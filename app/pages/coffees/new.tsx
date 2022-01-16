@@ -2,6 +2,7 @@ import { Link, useRouter, useMutation, BlitzPage, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import createCoffee from "app/coffees/mutations/createCoffee"
 import { CoffeeForm, FORM_ERROR } from "app/coffees/components/CoffeeForm"
+import Heading from "app/core/components/Heading"
 
 const NewCoffeePage: BlitzPage = () => {
   const router = useRouter()
@@ -9,7 +10,7 @@ const NewCoffeePage: BlitzPage = () => {
 
   return (
     <div>
-      <h1>Create New Coffee</h1>
+      <Heading type="h1">Create New Coffee</Heading>
 
       <CoffeeForm
         submitText="Create Coffee"

@@ -16,13 +16,15 @@ const Layout = ({ title, children }: LayoutProps) => {
         <title>{title || "Consumpation.Coffee"}</title>
       </Head>
 
-      <DynamicNavBar />
+      <div className="dark:bg-gray-900">
+        <DynamicNavBar />
 
-      <main className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl">{children}</div>
-      </main>
+        <main className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl">{children}</div>
+        </main>
 
-      <DynamicFooter />
+        <DynamicFooter />
+      </div>
     </>
   )
 }

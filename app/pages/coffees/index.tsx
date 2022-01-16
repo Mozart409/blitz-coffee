@@ -31,7 +31,7 @@ export const CoffeesList = () => {
             <a>
               <button
                 onClick={() => plausible("createNewCoffee")}
-                className="flex justify-center items-center py-2 px-4 w-full text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50"
+                className="flex justify-center items-center py-2 px-4 w-full text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm dark:text-gray-300 dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800"
               >
                 Create new coffee
               </button>
@@ -44,7 +44,7 @@ export const CoffeesList = () => {
             {coffees.map((coffee) => (
               <li key={coffee.id} className="py-5">
                 <div className="relative focus-within:ring-2 focus-within:ring-indigo-500">
-                  <h3 className="text-sm font-semibold text-gray-800">
+                  <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-100">
                     <Link href={Routes.EditCoffeePage({ coffeeId: coffee.id })}>
                       <a className="hover:underline focus:outline-none">
                         <span className="absolute inset-0" aria-hidden="true" />
@@ -52,10 +52,12 @@ export const CoffeesList = () => {
                       </a>
                     </Link>
                   </h3>
-                  <h4 className="text-xs font-semibold text-gray-700">
+                  <h4 className="text-xs font-semibold text-gray-700 dark:text-gray-500">
                     {new Date(coffee.createdAt).toLocaleString()}
                   </h4>
-                  <p className="mt-1 text-sm text-gray-600 line-clamp-2">{coffee.note}</p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                    {coffee.note}
+                  </p>
                 </div>
               </li>
             ))}

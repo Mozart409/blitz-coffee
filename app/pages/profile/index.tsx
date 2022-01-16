@@ -6,6 +6,7 @@ import Layout from "app/core/layouts/Layout"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import { FORM_ERROR, ProfileForm } from "app/profiles/components/ProfileForm"
 import updateProfile from "app/profiles/mutations/updateProfile"
+import Heading from "app/core/components/Heading"
 
 export const Profile = () => {
   const currentUser = useCurrentUser()
@@ -17,7 +18,9 @@ export const Profile = () => {
       </Head>
 
       <div>
-        <h1>Hello, {currentUser?.name ? currentUser?.name : "User"}</h1>
+        <Heading type="h1">
+          <span>Hello, {currentUser?.name ? currentUser?.name : "User"}</span>
+        </Heading>
       </div>
 
       <ProfileForm

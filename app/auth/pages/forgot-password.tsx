@@ -4,13 +4,14 @@ import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
 import { ForgotPassword } from "app/auth/validations"
 import forgotPassword from "app/auth/mutations/forgotPassword"
+import Heading from "app/core/components/Heading"
 
 const ForgotPasswordPage: BlitzPage = () => {
   const [forgotPasswordMutation, { isSuccess }] = useMutation(forgotPassword)
 
   return (
     <div>
-      <h1>Forgot your password?</h1>
+      <Heading type={"h1"}>Forgot your password?</Heading>
 
       {isSuccess ? (
         <div>

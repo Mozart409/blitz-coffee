@@ -17,6 +17,7 @@ import { Suspense } from "react"
 
 import * as LogRocket from "integrations/logrocket"
 import React from "react"
+
 LogRocket.init()
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -34,17 +35,19 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [session])
 
   return (
-    <PlausibleProvider domain="consumption.coffee">
-      <Suspense fallback={<div>Loading...</div>}>
-        <ErrorBoundary
-          FallbackComponent={RootErrorFallback}
-          resetKeys={[router.asPath]}
-          onReset={useQueryErrorResetBoundary().reset}
-        >
-          {getLayout(<Component {...pageProps} />)}
-        </ErrorBoundary>
-      </Suspense>
-    </PlausibleProvider>
+    <div className="min-h-full">
+      <PlausibleProvider domain="consumption.coffee">
+        <Suspense fallback={<div>Loading...</div>}>
+          <ErrorBoundary
+            FallbackComponent={RootErrorFallback}
+            resetKeys={[router.asPath]}
+            onReset={useQueryErrorResetBoundary().reset}
+          >
+            <div>{getLayout(<Component {...pageProps} />)}</div>
+          </ErrorBoundary>
+        </Suspense>
+      </PlausibleProvider>
+    </div>
   )
 }
 
