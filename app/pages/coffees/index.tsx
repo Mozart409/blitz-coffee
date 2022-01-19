@@ -5,7 +5,7 @@ import getCoffees from "app/coffees/queries/getCoffees"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid"
 
 import { usePlausible } from "next-plausible"
-// import CoffeeChart from "app/core/components/CoffeeChart"
+import { CoffeeChart } from "app/coffees/components/CoffeeChart"
 
 const ITEMS_PER_PAGE = 25
 
@@ -37,6 +37,10 @@ export const CoffeesList = () => {
               </button>
             </a>
           </Link>
+        </div>
+
+        <div>
+          <CoffeeChart coffees={coffees} />
         </div>
 
         <div className="flow-root mt-6">

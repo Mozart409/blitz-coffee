@@ -1,12 +1,14 @@
 // blitz.config.js
 var {sessionMiddleware, simpleRolesIsAuthorized} = require("blitz");
 var withPlugins = require("next-compose-plugins");
+var withTM = require("next-transpile-modules")(["frappe-charts"]);
 var withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true"
 });
 var {StatsWriterPlugin} = require("webpack-stats-plugin");
 var {RelativeCiAgentWebpackPlugin} = require("@relative-ci/agent");
 module.exports = withPlugins([
+  [withTM],
   [withBundleAnalyzer],
   {
     middleware: [
