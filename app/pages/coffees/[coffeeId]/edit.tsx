@@ -22,7 +22,7 @@ export const EditCoffee = () => {
         <Heading type="h1">
           <span>Edit Coffee {coffee.id}</span>
         </Heading>
-        <pre>{JSON.stringify(coffee, null, 2)}</pre>
+        <pre className="dark:text-gray-100 break-words">{JSON.stringify(coffee, null, 2)}</pre>
 
         <CoffeeForm
           submitText="Update Coffee"
@@ -61,7 +61,7 @@ const EditCoffeePage: BlitzPage = () => {
 
       <p>
         <Link href={Routes.CoffeesPage()}>
-          <a>Coffees</a>
+          <a className="dark:text-gray-100">Back to Coffees</a>
         </Link>
       </p>
     </div>
