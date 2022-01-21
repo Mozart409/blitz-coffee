@@ -40,7 +40,7 @@ export const CoffeesList = () => {
         </div>
 
         <div>
-          <CoffeeChart coffees={coffees} />
+          <CoffeeChart />
         </div>
 
         <div className="flow-root mt-6">
