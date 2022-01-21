@@ -37,7 +37,7 @@ export const CoffeeChart: FC = () => {
 
         </ResizableBox> */}
 
-        <div className="grid grid-cols-1  justify-items-center p-4">
+        <div className="grid grid-cols-1 justify-items-center p-4">
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={coffeeByDate}>
               <defs>
@@ -96,7 +96,7 @@ const CustomTooltip: FC<ICustomTooltip> = ({ active, payload, label }) => {
         {/* <div><h4 className="">{format(parseISO(label), "eeee, d MMM, yyyy")}</h4>
         <p className="">{count} coffees</p></div> */}
 
-        <div className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6">
+        <div className="overflow-hidden py-5 px-4 bg-white rounded-lg shadow sm:p-6">
           <dt className="text-sm font-medium text-gray-500 truncate">
             {format(parseISO(label), "eeee, d MMM, yyyy")}
           </dt>
