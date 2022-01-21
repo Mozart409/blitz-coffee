@@ -22,7 +22,7 @@ export const EditCoffee = () => {
         <Heading type="h1">
           <span>Edit Coffee {coffee.id}</span>
         </Heading>
-        <pre className="dark:text-gray-100 break-words">{JSON.stringify(coffee, null, 2)}</pre>
+        <pre className="break-words dark:text-gray-100">{JSON.stringify(coffee, null, 2)}</pre>
 
         <CoffeeForm
           submitText="Update Coffee"
