@@ -64,6 +64,7 @@ export const CoffeeChart: FC = () => {
                 axisLine={true}
                 tickLine={true}
                 type="number"
+                tickCount={8}
                 domain={["dataMin", "dataMax"]}
               />
 
