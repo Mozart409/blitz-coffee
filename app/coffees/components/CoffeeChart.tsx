@@ -65,7 +65,8 @@ export const CoffeeChart: FC = () => {
                 tickLine={true}
                 type="number"
                 tickCount={8}
-                domain={["dataMin", "dataMax"]}
+                tickSize={1}
+                domain={[0, "dataMax"]}
               />
 
               <Bar dataKey="count" fill="url(#color)" />
