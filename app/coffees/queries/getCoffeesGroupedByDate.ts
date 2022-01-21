@@ -21,7 +21,7 @@ export default resolver.pipe(resolver.authorize(), async ({}) => {
   1
   order by
   date_trunc DESC
-  limit 20
+  limit 10
   `
 
   if (!coffesByDateFalse) throw new NotFoundError()
