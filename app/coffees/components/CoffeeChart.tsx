@@ -59,7 +59,7 @@ export const CoffeeChart: FC = () => {
                 }}
               />
 
-              <YAxis dataKey="count" axisLine={true} tickLine={true} tickCount={8} />
+              <YAxis dataKey="count" axisLine={true} tickLine={true} tickCount={4} />
 
               <Bar dataKey="count" fill="url(#color)" />
 
