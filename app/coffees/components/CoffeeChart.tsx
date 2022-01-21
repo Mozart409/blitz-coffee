@@ -4,12 +4,17 @@ import React from "react"
 import { FC } from "react"
 import { AxisOptions, Chart } from "react-charts"
 
+import { useQuery } from "blitz"
+
 import ResizableBox from "app/core/components/ResizableBox"
 import { format, compareAsc } from "date-fns"
 import { Coffee } from "db"
 
+import getUserCount from "app/query/getUserCount"
+
 import groupBy from "lodash/groupBy"
 import add from "lodash/add"
+import getCoffeesGroupedByDate from "../queries/getCoffeesGroupedByDate"
 
 interface IProps {
   coffees: Coffee[]
@@ -23,8 +28,8 @@ export interface DataStructure {
 }
 
 export interface DataItem {
-  createdAt: string
-  amount: unknown
+  date_trunc: string
+  count: number
 }
 
 export const CoffeeChart: FC<IProps> = ({ coffees }) => {
@@ -38,7 +43,7 @@ export const CoffeeChart: FC<IProps> = ({ coffees }) => {
   let grouped_data
   let grouped_data2
 
-  const cArry = async () => {
+  /* const cArry = async () => {
     const a = coffeesArray[0].data
     coffees.map((item) => {
       //  console.log(item.amount)
@@ -52,11 +57,10 @@ export const CoffeeChart: FC<IProps> = ({ coffees }) => {
 
     // return coffeesArray[0].data.sort((a, b) => a.createdAt - b.createdAt)
   }
-
-  cArry()
-
-  //const data = React.useMemo(() => [coffeesArray[0]])
-  const data = React.useMemo(() => [grouped_data2])
+ */
+  /* const data = React.useMemo(() => ({
+    getValue: (datum) => datum.grouped_data2,
+  })) */
 
   /* const dataBackUp = React.useMemo(() => [
     {
@@ -229,7 +233,7 @@ export const CoffeeChart: FC<IProps> = ({ coffees }) => {
     []
   ) */
 
-  const primaryAxis = React.useMemo(
+  /*   const primaryAxis = React.useMemo(
     (): AxisOptions<DataItem> => ({
       getValue: (datum) => datum.createdAt,
     }),
@@ -243,14 +247,48 @@ export const CoffeeChart: FC<IProps> = ({ coffees }) => {
       },
     ],
     []
+  ) */
+  const [coffeeByDate] = useQuery(
+    getCoffeesGroupedByDate,
+    {},
+    { cacheTime: 1000 * 60 * 60, staleTime: 1000 * 60 }
+  )
+
+  const data = React.useMemo(
+    () => [
+      {
+        label: "Coffees",
+        data: coffeeByDate,
+      },
+    ],
+
+    []
+  )
+
+  const primaryAxis = React.useMemo(
+    () => [
+      {
+        getValue: (datum: { date_trunc: string }) => datum.date_trunc,
+      },
+    ],
+    []
+  )
+
+  const secondaryAxes = React.useMemo(
+    () => [
+      {
+        getValue: (datum: { count: number }) => datum.count,
+      },
+    ],
+    []
   )
 
   return (
     <div>
       <Heading type={"h1"}>Coffee Chart</Heading>
-      {console.log(grouped_data2)}
+      {/* {console.log(grouped_data2)} */}
       <div>
-        <pre className="dark:text-gray-200">{JSON.stringify(grouped_data2, null, 2)}</pre>
+        <pre className="dark:text-gray-200">{JSON.stringify(data, null, 2)}</pre>
       </div>
       <div className="m-2 bg-gray-200 rounded">
         <ResizableBox>
