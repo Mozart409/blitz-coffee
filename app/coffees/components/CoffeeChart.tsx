@@ -53,6 +53,7 @@ export const CoffeeChart: FC = () => {
                 dataKey="date_trunc"
                 axisLine={true}
                 tickLine={true}
+                allowDecimals={false}
                 tickFormatter={(str) => {
                   const date = parseISO(str)
                   return format(date, "d, MMM")
