@@ -7,6 +7,7 @@ import {
   AuthorizationError,
   ErrorFallbackProps,
   useQueryErrorResetBoundary,
+  Head,
 } from "blitz"
 import { ErrorBoundary } from "react-error-boundary"
 import LoginForm from "app/auth/components/LoginForm"
@@ -36,6 +37,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <div className="min-h-full">
+      <Head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+      </Head>
       <PlausibleProvider domain="consumption.coffee">
         <Suspense fallback={<div>Loading...</div>}>
           <ErrorBoundary

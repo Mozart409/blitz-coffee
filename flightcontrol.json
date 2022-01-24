@@ -1,0 +1,37 @@
+{
+  "environments": [
+    {
+      "id": "production",
+      "name": "Production",
+      "region": "eu-central-1",
+      "source": {
+        "branch": "master"
+      },
+      "services": [
+        {
+          "id": "blitz-coffee",
+          "name": "blitz-coffee",
+          "type": "fargate",
+          "cpu": 0.25,
+          "memory": 512,
+          "domain": "example.com",
+          "minInstances": 1,
+          "maxInstances": 1,
+          "buildCommand": "npm run build",
+          "startCommand": "npm run start:production",
+          "envVariables": {
+            "NODE_ENV": "production",
+            "APP_ENV": "production",
+
+            "DATABASE_URL": {
+              "fromParameterStore": "BLITZ_COFFE_DB_URL"
+            },
+            "SESSION_SECRET_KEY": {
+              "fromParameterStore": "BLITZ_SESSION_SECRET"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
