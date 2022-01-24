@@ -22,11 +22,7 @@ export interface DataItem {
 }
 
 export const CoffeeChart: FC = () => {
-  const [coffeeByDate] = useQuery(
-    getCoffeesGroupedByDate,
-    {},
-    { cacheTime: 1000 * 60 * 60, staleTime: 1000 * 60 }
-  )
+  const [coffeeByDate] = useQuery(getCoffeesGroupedByDate, {}, { staleTime: 1000 * 5 })
 
   return (
     <div>
