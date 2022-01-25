@@ -19,7 +19,7 @@ export const Coffee = () => {
 
       <div>
         <h2>Coffee {coffee.id}</h2>
-        <pre>{JSON.stringify(coffee, null, 2)}</pre>
+        <pre className="dark:text-gray-100">{JSON.stringify(coffee, null, 2)}</pre>
 
         <div className="space-x-2">
           <button
