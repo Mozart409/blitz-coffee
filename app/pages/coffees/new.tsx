@@ -34,7 +34,7 @@ const NewCoffeePage: BlitzPage = () => {
 
       <p>
         <Link href={Routes.CoffeesPage()}>
-          <a>Coffees</a>
+          <a className="dark:text-gray-100">Coffees</a>
         </Link>
       </p>
     </div>
