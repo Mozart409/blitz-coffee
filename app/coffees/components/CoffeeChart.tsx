@@ -21,6 +21,29 @@ export interface DataItem {
   count: number
 }
 
+const testData = [
+  {
+    date_trunc: "2022-01-18T00:00:00+00:00",
+    count: 13,
+  },
+  {
+    date_trunc: "2022-01-19T00:00:00+00:00",
+    count: 12,
+  },
+  {
+    date_trunc: "2022-01-20T00:00:00+00:00",
+    count: 33,
+  },
+  {
+    date_trunc: "2022-01-21T00:00:00+00:00",
+    count: 17,
+  },
+  {
+    date_trunc: "2022-01-25T00:00:00+00:00",
+    count: 1,
+  },
+]
+
 export const CoffeeChart: FC = () => {
   const [coffeeByDate] = useQuery(getCoffeesGroupedByDate, {}, { staleTime: 1000 * 5 })
 
@@ -32,6 +55,8 @@ export const CoffeeChart: FC = () => {
         {/* <ResizableBox>
 
         </ResizableBox> */}
+
+        {/* {console.log(coffeeByDate)} */}
 
         <div className="grid grid-cols-1 justify-items-center p-4">
           <ResponsiveContainer width="100%" height={400}>

@@ -16,6 +16,8 @@ import PlausibleProvider from "next-plausible"
 import "app/core/styles/index.css"
 import { Suspense } from "react"
 
+import { ReactQueryDevtools } from "react-query/devtools"
+
 import * as LogRocket from "integrations/logrocket"
 import React from "react"
 
@@ -48,6 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
             onReset={useQueryErrorResetBoundary().reset}
           >
             <div>{getLayout(<Component {...pageProps} />)}</div>
+            <ReactQueryDevtools initialIsOpen={false} />
           </ErrorBoundary>
         </Suspense>
       </PlausibleProvider>
