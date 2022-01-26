@@ -9,17 +9,20 @@ import { SecurePassword } from "blitz"
  * realistic data.
  */
 const seed = async () => {
-  const pw = "test"
-  const hashedPassword = await SecurePassword.hash(pw.trim())
-  await db.user.create({
-    data: {
-      id: "1",
-      email: "test@test.com",
-      hashedPassword,
-      role: "USER",
-    },
-  })
+  const user = await db.user.findFirst({ where: { id: "1" } })
 
+  if (!user) {
+    const pw = "test"
+    const hashedPassword = await SecurePassword.hash(pw.trim())
+    await db.user.create({
+      data: {
+        id: "1",
+        email: "test@test.com",
+        hashedPassword,
+        role: "USER",
+      },
+    })
+  }
   for (let i = 0; i < 25; i++) {
     await db.coffee.create({
       data: {
