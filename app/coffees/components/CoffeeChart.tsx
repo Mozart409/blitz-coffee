@@ -45,7 +45,7 @@ const testData = [
 ]
 
 export const CoffeeChart: FC = () => {
-  const [coffeeByDate] = useQuery(getCoffeesGroupedByDate, {}, { staleTime: 1000 * 5 })
+  const [coffeeByDate] = useQuery(getCoffeesGroupedByDate, {})
 
   return (
     <div>
