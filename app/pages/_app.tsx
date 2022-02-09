@@ -38,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [session])
 
   return (
-    <div className="min-h-full">
+    <div className="flex min-h-screen flex-col scroll-smooth font-sans dark:bg-gray-900 antialiased">
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>

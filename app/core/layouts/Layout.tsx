@@ -16,7 +16,7 @@ const Layout = ({ title, children }: LayoutProps) => {
         <title>{title || "Consumpation.Coffee"}</title>
       </Head>
 
-      <div className="dark:bg-gray-900">
+      <div className="">
         <DynamicNavBar />
 
         <main className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
