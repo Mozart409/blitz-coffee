@@ -173,6 +173,9 @@ const NavBar = () => {
             </div>
             <div className="flex -mr-2 sm:hidden">
               {/* <!-- Mobile menu button --> */}
+              <div className="inline-flex justify-center items-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:ring-2 focus:ring-inset focus:ring-white focus:outline-none">
+                <ThemeToggle />
+              </div>
               <button
                 type="button"
                 className="inline-flex justify-center items-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:ring-2 focus:ring-inset focus:ring-white focus:outline-none"
