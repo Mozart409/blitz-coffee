@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" href="apple-icon-180.png" />
 
           <meta name="apple-mobile-web-app-capable" content="yes" />
-
+          <meta name="HandheldFriendly" content="true" />
           <link
             rel="apple-touch-startup-image"
             href="apple-splash-2048-2732.jpg"
