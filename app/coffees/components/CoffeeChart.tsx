@@ -120,7 +120,7 @@ interface payLoadItem {
 
 const CustomTooltip: FC<ICustomTooltip> = ({ active, payload, label }) => {
   if (active) {
-    const count: number = payload[0].payload.count
+    const count = payload[0]?.payload?.count
     return (
       <div className="">
         {/* <div><h4 className="">{format(parseISO(label), "eeee, d MMM, yyyy")}</h4>

@@ -1,13 +1,12 @@
 import { ReactNode, Suspense } from "react"
 import { Head, dynamic } from "blitz"
+import NavBar from "../components/NavBar"
+import Footer from "../components/Footer"
 
 type LayoutProps = {
   title?: string
   children: ReactNode
 }
-
-const DynamicNavBar = dynamic(() => import("../components/NavBar"))
-const DynamicFooter = dynamic(() => import("../components/Footer"))
 
 const Layout = ({ title, children }: LayoutProps) => {
   return (
@@ -17,13 +16,13 @@ const Layout = ({ title, children }: LayoutProps) => {
       </Head>
 
       <div className="dark:bg-gray-900">
-        <DynamicNavBar />
+        <NavBar />
 
         <main className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">{children}</div>
         </main>
 
-        <DynamicFooter />
+        <Footer />
       </div>
     </>
   )

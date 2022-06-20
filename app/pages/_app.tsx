@@ -3,13 +3,14 @@ import {
   AppProps,
   ErrorComponent,
   useRouter,
+  ErrorBoundary,
   AuthenticationError,
   AuthorizationError,
   ErrorFallbackProps,
   useQueryErrorResetBoundary,
   Head,
 } from "blitz"
-import { ErrorBoundary } from "react-error-boundary"
+
 import LoginForm from "app/auth/components/LoginForm"
 import PlausibleProvider from "next-plausible"
 
@@ -20,6 +21,8 @@ import { ReactQueryDevtools } from "react-query/devtools"
 
 import * as LogRocket from "integrations/logrocket"
 import React from "react"
+
+import "dotenv/config"
 
 LogRocket.init()
 

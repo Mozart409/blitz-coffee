@@ -51,8 +51,11 @@ export const CoffeesList = () => {
                   <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-100">
                     <Link href={Routes.EditCoffeePage({ coffeeId: coffee.id })}>
                       <a className="hover:underline focus:outline-none">
-                        <span className="absolute inset-0" aria-hidden="true" />
-                        Amount {coffee.amount}
+                        <div>
+                          <span className="absolute inset-0" aria-hidden="true">
+                            {JSON.stringify(coffee.amount)}
+                          </span>
+                        </div>
                       </a>
                     </Link>
                   </h3>
