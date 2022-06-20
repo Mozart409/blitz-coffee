@@ -93,12 +93,12 @@ const NavBar = () => {
                        alt=""
                      /> */}
                       <div className="w-8 h-8">
-                        {/* <Avatar
+                        <Avatar
                           size="32px"
                           className="rounded-full"
                           email={currentUser?.email}
                           color="cyan"
-                        /> */}
+                        />
                       </div>
                     </button>
                   </div>
@@ -275,12 +275,12 @@ const NavBar = () => {
                   alt=""
                 /> */}
                   <div className="w-10 h-10">
-                    {/*  <Avatar
+                    <Avatar
                       size="40px"
                       className="rounded-full"
                       email={currentUser?.email}
                       color="cyan"
-                    /> */}
+                    />
                   </div>
                 </div>
                 <div className="ml-3">

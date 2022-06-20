@@ -22,8 +22,6 @@ import { ReactQueryDevtools } from "react-query/devtools"
 import * as LogRocket from "integrations/logrocket"
 import React from "react"
 
-import "dotenv/config"
-
 LogRocket.init()
 
 export default function App({ Component, pageProps }: AppProps) {
